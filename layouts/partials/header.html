@@ -2,5 +2,8 @@
         <div class="container">
             <a href="{{ .Site.BaseURL }}" alt="{{ .Site.Title }}"><h1 class="blog-title heading">{{ .Site.Title }}</h1></a>
             <p class="blog-description">{{ .Site.Params.description }}</p>
+            <p class="blog-description">Helping companies {{ index ( shuffle .Site.Params.header_verb ) 1 }}
+                {{ index ( shuffle .Site.Params.header_adjective ) 1 }}
+                {{ index ( shuffle .Site.Params.header_noun ) 1 }} since MCMXCI</p>
         </div>
     </header>
