@@ -1,9 +1,23 @@
     <header id="site-header">
         <div class="container">
             <a href="{{ .Site.BaseURL }}" alt="{{ .Site.Title }}"><h1 class="blog-title heading">{{ .Site.Title }}</h1></a>
-            <p class="blog-description">{{ .Site.Params.description }}</p>
-            <p class="blog-description">Helping companies {{ index ( shuffle .Site.Params.header_verb ) 1 }}
-                {{ index ( shuffle .Site.Params.header_adjective ) 1 }}
-                {{ index ( shuffle .Site.Params.header_noun ) 1 }} since MCMXCI</p>
+            <a href="https://www.dack.com/web/bullshit.html" alt="BS Credits to Dak.com" target="_blank"><p class="blog-description"></p></a>
+
+    <script>
+        var verbs =  {{ .Site.Params.header_verbs }};
+        var adjectives = {{ .Site.Params.header_adjectives }};
+        var nouns = {{ .Site.Params.header_nouns }};
+
+        var node = document.createTextNode("Helping companies "
+            + verbs[Math.floor(Math.random() * verbs.length)] + " "
+            + adjectives[Math.floor(Math.random() * adjectives.length)] + " "
+            + nouns[Math.floor(Math.random() * nouns.length)]
+            + " since MCMXCI");
+
+        var element = document.getElementsByClassName("blog-description")[0];
+        element.appendChild( node );
+
+    </script>
         </div>
     </header>
+
